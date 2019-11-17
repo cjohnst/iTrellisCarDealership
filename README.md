@@ -1,5 +1,5 @@
 # Car Dealership
 This solution is made using<BR>
-Visual Studios 2019
-Angular 8
-.net Core 3
+Visual Studios 2019, Angular 8, .net Core 3<BR>
+Nuget package Newtonsoft.Json
+ 

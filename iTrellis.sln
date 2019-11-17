@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Web", "iTrellis.CarDealership.Web\iTrellis.CarDealership.Web.csproj", "{E37D077F-10E0-484F-A26E-62A3EC9DD0EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Data", "iTrellis.CarDealership.Data\iTrellis.CarDealership.Data.csproj", "{4077E24D-5F68-44DD-8114-2914289FF932}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Business", "iTrellis.CarDealership.Business\iTrellis.CarDealership.Business.csproj", "{CA90931B-6113-44D2-993F-ABEF008897AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E37D077F-10E0-484F-A26E-62A3EC9DD0EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E37D077F-10E0-484F-A26E-62A3EC9DD0EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E37D077F-10E0-484F-A26E-62A3EC9DD0EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E37D077F-10E0-484F-A26E-62A3EC9DD0EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4077E24D-5F68-44DD-8114-2914289FF932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4077E24D-5F68-44DD-8114-2914289FF932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4077E24D-5F68-44DD-8114-2914289FF932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4077E24D-5F68-44DD-8114-2914289FF932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA90931B-6113-44D2-993F-ABEF008897AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA90931B-6113-44D2-993F-ABEF008897AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA90931B-6113-44D2-993F-ABEF008897AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA90931B-6113-44D2-993F-ABEF008897AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {37C4A186-675C-4D3C-AADD-EC9178C5A974}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { AppRouting } from './app.routing';
+
+import { AppComponent } from './app.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { HomeComponent } from './components/home/home.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavMenuComponent,
+        HomeComponent
+  ],
+  imports: [
+      BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+      BrowserAnimationsModule,
+      HttpClientModule,
+      FormsModule,
+      AppRouting
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

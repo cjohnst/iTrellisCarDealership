@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Web", "iTrellis.CarDealership.Web\iTrellis.CarDealership.Web.csproj", "{E37D077F-10E0-484F-A26E-62A3EC9DD0EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iTrellis.CarDealership.Web", "iTrellis.CarDealership.Web\iTrellis.CarDealership.Web.csproj", "{E37D077F-10E0-484F-A26E-62A3EC9DD0EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Data", "iTrellis.CarDealership.Data\iTrellis.CarDealership.Data.csproj", "{4077E24D-5F68-44DD-8114-2914289FF932}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Business", "iTrellis.CarDealership.Business\iTrellis.CarDealership.Business.csproj", "{CA90931B-6113-44D2-993F-ABEF008897AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Mobile.Android", "iTrellis.CarDealership.Mobile\iTrellis.CarDealership.Mobile.Android\iTrellis.CarDealership.Mobile.Android.csproj", "{9636F753-F4D9-447B-AD29-686B2D49223D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iTrellis.CarDealership.Mobile", "iTrellis.CarDealership.Mobile\iTrellis.CarDealership.Mobile\iTrellis.CarDealership.Mobile.csproj", "{CD87F23E-D06A-41F0-94F1-5DE18FB3045C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,16 @@ Global
 		{CA90931B-6113-44D2-993F-ABEF008897AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA90931B-6113-44D2-993F-ABEF008897AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA90931B-6113-44D2-993F-ABEF008897AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9636F753-F4D9-447B-AD29-686B2D49223D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9636F753-F4D9-447B-AD29-686B2D49223D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9636F753-F4D9-447B-AD29-686B2D49223D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9636F753-F4D9-447B-AD29-686B2D49223D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9636F753-F4D9-447B-AD29-686B2D49223D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9636F753-F4D9-447B-AD29-686B2D49223D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CD87F23E-D06A-41F0-94F1-5DE18FB3045C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD87F23E-D06A-41F0-94F1-5DE18FB3045C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD87F23E-D06A-41F0-94F1-5DE18FB3045C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD87F23E-D06A-41F0-94F1-5DE18FB3045C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

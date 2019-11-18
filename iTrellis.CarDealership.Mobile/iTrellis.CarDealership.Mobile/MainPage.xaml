@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="iTrellis.CarDealership.Mobile.MainPage">
+
+    <StackLayout>
+
+        <Label Text="Car Dealership"/>
+
+        
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Text="Color:" Grid.Row="0" Grid.Column="0" YAlign="Center"/>
+
+            <Picker x:Name="color"  Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" 
+                    Title="Select a color">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Red</x:String>
+                        <x:String>White</x:String>
+                        <x:String>Gray</x:String>
+                        <x:String>Silver</x:String>
+                        <x:String>Black</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label  Grid.Row="1" Grid.Column="0" Text="Sunroof:" YAlign="Center"  />
+            <Switch Grid.Row="1" Grid.Column="1" x:Name="hasSunroof" IsToggled="false"/>
+            <Label  Grid.Row="1" Grid.Column="2" Text="Four Wheel Drive:" YAlign="Center"  />
+            <Switch Grid.Row="1" Grid.Column="3" x:Name="isFourWheelDrive" IsToggled="false"/>
+
+            <Label  Grid.Row="2" Grid.Column="0" Text="Low Miles:" YAlign="Center"/>
+            <Switch Grid.Row="2" Grid.Column="1" x:Name="hasLowMiles" IsToggled="false"/>
+            <Label  Grid.Row="2" Grid.Column="2" Text="Power Windows:" YAlign="Center"/>
+            <Switch Grid.Row="2" Grid.Column="3" x:Name="hasPowerWindows" IsToggled="false"/>
+
+
+            <Label  Grid.Row="3" Grid.Column="0" Text="Navigation:" YAlign="Center"/>
+            <Switch Grid.Row="3" Grid.Column="1" x:Name="hasNavigation" IsToggled="false"/>
+            <Label  Grid.Row="3" Grid.Column="2" Text="Heated Seats:" YAlign="Center"/>
+            <Switch Grid.Row="3" Grid.Column="3" x:Name="hasHeatedSeats" IsToggled="false"/>
+        
+        </Grid>
+
+
+        <Button
+                Text="Search Inventory"
+                Clicked="OnButtonClicked" />
+
+    
+        
+        <ListView x:Name="inventory">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="8,0,8,0">
+
+                            
+                            <Grid >
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" FontAttributes="Bold" Text="Make:"/>
+                                <Label Grid.Row="0" Grid.Column="1" FontAttributes="Bold" Text="{Binding make}" />
+                                <Label Grid.Row="0" Grid.Column="2" FontAttributes="Bold" Text="Year:"/>
+                                <Label Grid.Row="0" Grid.Column="3" FontAttributes="Bold" Text="{Binding year}" />
+
+                                <Label Grid.Row="1" Grid.Column="1" Text="Color:"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding color}"/>
+                                <Label Grid.Row="1" Grid.Column="3" Text="Price:"/>
+                                <Label Grid.Row="1" Grid.Column="4" Text="{Binding price}"/>
+
+
+                            </Grid>
+
+
+                        </StackLayout>
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    
+    
+    
+    
+    </StackLayout>
+
+</ContentPage>

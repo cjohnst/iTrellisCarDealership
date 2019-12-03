@@ -9,20 +9,25 @@ using iTrellis.CarDealership.Data.Models;
 
 namespace iTrellis.CarDealership.Business
 {
-    public class Inventory
+    public class Inventory : IInventory
     {
+        ICarDealershipContext _context;
 
 
-        public List<CarModel> GetAllCars()
+        public Inventory(ICarDealershipContext context)
         {
-            var context = new CarDealershipContext();
-            List<CarModel> inventory = context.GetAllCars();
-
-            return inventory;
+            _context = context;
         }
 
 
-        public List<CarModel> Search(CarModel car)
+
+        public async Task<List<CarModel>> GetAllCarsAsync()
+        {
+            return await _context.GetAllCarsAsync();
+        }
+
+
+        public async Task<List<CarModel>> SearchAsync(CarModel car)
         {
             //Normally I would use entity framework with IQueryable,
             //at the end call .ToList();
@@ -34,13 +39,14 @@ namespace iTrellis.CarDealership.Business
             //}
             //return cars.ToList();
 
-            var context = new CarDealershipContext();
-            List<CarModel> inventory = context.GetAllCars();
+            List<CarModel> inventory = await _context.GetAllCarsAsync();
 
-            if (!string.IsNullOrEmpty(car.color)) {
+            if (!string.IsNullOrEmpty(car.color))
+            {
                 inventory = inventory.Where(x => x.color == car.color).ToList();
             }
-            if (car.searchHasSunroof != "") {
+            if (car.searchHasSunroof != "")
+            {
                 inventory = inventory.Where(x => x.hasSunroof == Boolean.Parse(car.searchHasSunroof)).ToList();
             }
             if (car.searchIsFourWheelDrive != "")

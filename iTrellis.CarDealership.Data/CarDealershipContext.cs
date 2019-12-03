@@ -23,13 +23,12 @@ namespace iTrellis.CarDealership.Data
     //}
 
 
-    public class CarDealershipContext
+    public class CarDealershipContext : ICarDealershipContext
     {
 
-        public List<CarModel> GetAllCars() {
-            //string json = File.ReadAllText("wwwroot/assets/inventory.json");
-
-            return JsonConvert.DeserializeObject<List<CarModel>>(json);
+        public async Task<List<CarModel>> GetAllCarsAsync()
+        {
+            return await Task.Run(() => JsonConvert.DeserializeObject<List<CarModel>>(json));
         }
 
         public string json = @"

@@ -13,23 +13,26 @@ namespace iTrellis.CarDealership.Web.Controllers
     [Route("api/inventory")]
     public class InventoryController : ControllerBase
     {
+        IInventory _inventory;
 
+        public InventoryController(IInventory inventory)
+        {
+            _inventory = inventory;
+        }
 
         [HttpGet]
         [Route("")]
-        public List<CarModel> GetAllCars()
+        public async Task<List<CarModel>> GetAllCars()
         {
-            var inventory = new Inventory();
-            return inventory.GetAllCars();
+            return await _inventory.GetAllCarsAsync();
         }
 
 
         [HttpPost]
         [Route("Search")]
-        public List<CarModel> Search([FromBody] CarModel car)
+        public async Task<List<CarModel>> Search([FromBody] CarModel car)
         {
-            var inventory = new Inventory();
-            return inventory.Search(car);
+            return await _inventory.SearchAsync(car);
         }
 
     }

@@ -1,3 +1,8 @@
+using System;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using iTrellis.CarDealership.Business;
+using iTrellis.CarDealership.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +10,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
+
 
 namespace iTrellis.CarDealership.Web
 {
@@ -17,8 +24,11 @@ namespace iTrellis.CarDealership.Web
 
         public IConfiguration Configuration { get; }
 
+        public IContainer ApplicationContainer { get; private set; }
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options =>
             {
@@ -35,6 +45,20 @@ namespace iTrellis.CarDealership.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+
+            // Create the container builder.
+            var builder = new ContainerBuilder();
+            builder.Populate(services);
+
+            builder.RegisterType<Inventory>().As<IInventory>();
+            builder.RegisterType<CarDealershipContext>().As<ICarDealershipContext>();
+
+            this.ApplicationContainer = builder.Build();
+
+            // Create the IServiceProvider based on the container.
+            return new AutofacServiceProvider(this.ApplicationContainer);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
